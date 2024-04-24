@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/on_boarding/on_boarding_controller.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/colors.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/dimensions/constants.dart';
+import 'package:mae_assurance_mobile/presentation/ressources/routes/router.dart';
 
 import 'on_boarding_content.dart';
 
@@ -76,7 +79,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             child: ElevatedButton(
                               onPressed: () {
                                 onBoardingController.check();
-                                //Get.to(SignInScreen());
+                                Get.toNamed(AppRouting.signIn);
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppColors.primaryGreenLight,
@@ -98,7 +101,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               child: ElevatedButton(
                                   onPressed: (currentPage == contentList.length - 1)
                                       ? () {
-                                          //  Get.to(SignInScreen());
+                                          Get.toNamed(AppRouting.signIn);
                                         }
                                       : () {
                                           onBoardingController.check();
