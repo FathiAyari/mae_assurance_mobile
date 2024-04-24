@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: AppRouting.generateRoute,
-      initialRoute: AppRouting.splashScreen,
-      title: 'MAE Assurances',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: AppRouting.generateRoute,
+        initialRoute: AppRouting.splashScreen,
+        title: 'MAE Assurances',
+        theme: ThemeData(
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          splashFactory: NoSplash.splashFactory,
+        ));
   }
 }

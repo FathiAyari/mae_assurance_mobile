@@ -4,6 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/on_boarding/on_boarding_controller.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/colors.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/dimensions/constants.dart';
+import 'package:mae_assurance_mobile/presentation/ressources/fonts.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/routes/router.dart';
 
 import 'on_boarding_content.dart';
@@ -89,7 +90,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               ),
                               child: Text(
                                 "Ignorer",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white, fontFamily: Fonts.Raleway),
                               ),
                             ),
                           ),
@@ -115,11 +116,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                   child: (currentPage == contentList.length - 1)
                                       ? Text(
                                           "Commencer",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white, fontFamily: Fonts.Raleway),
                                         )
                                       : Text(
                                           'Suivant',
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white, fontFamily: Fonts.Raleway),
                                         )),
                             ),
                           ),
