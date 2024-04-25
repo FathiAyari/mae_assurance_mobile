@@ -3,6 +3,7 @@ import 'package:mae_assurance_mobile/presentation/client/screens/auth/account_in
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/reset_password.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/sign_in.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/sign_up.dart';
+import 'package:mae_assurance_mobile/presentation/client/screens/home/home_screen.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/on_boarding/on_boarding_page.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/splash_screen/splashscreen.dart';
 
@@ -13,6 +14,7 @@ class AppRouting {
   static final String resetPassword = "/reset_password";
   static final String onboarding = "/onboarding";
   static final String AccountInHold = "/account_in_hold";
+  static final String home = "/home";
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
@@ -27,6 +29,8 @@ class AppRouting {
         return MaterialPageRoute(builder: (_) => ResetPassword());
       case '/account_in_hold':
         return MaterialPageRoute(builder: (_) => AccountInHoldScreen());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => HomeScreen());
 
       default:
         return MaterialPageRoute(

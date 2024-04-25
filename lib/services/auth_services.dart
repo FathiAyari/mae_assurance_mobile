@@ -23,7 +23,7 @@ class AuthServices {
     ApiResponse apiResponse = ApiResponse();
     try {
       String? token = await FirebaseMessaging.instance.getToken();
-
+      print(token);
       Map<String, dynamic> data = user.toJson();
       data['token'] = token;
       var body = jsonEncode(data);
@@ -56,21 +56,39 @@ class AuthServices {
       Map<String, dynamic> data = user.toJson();
       data['token'] = token;
       var body = jsonEncode(data);
-      print(body);
+
       http.Response response = await CallApi().postData(ApiConstants.login, body);
       var result = jsonDecode(utf8.decode(response.bodyBytes));
       if (response.statusCode == 200) {
         User user = User.fromJson(result);
         saveUserLocally(user);
         apiResponse.responseStatus = true;
+        apiResponse.responseMessage = user.status! ? "active" : "inactive";
       } else {
-        apiResponse.responseMessage = result['error'];
+        apiResponse.responseMessage = result['message'];
         apiResponse.responseStatus = false;
       }
       return apiResponse;
     } catch (e) {
+      print(e.toString());
       apiResponse.responseStatus = false;
       apiResponse.responseMessage = e.toString();
+      return apiResponse;
+    }
+  }
+
+  Future<ApiResponse> checkAccountStatus({required int id}) async {
+    ApiResponse apiResponse = ApiResponse();
+    try {
+      http.Response response = await CallApi().getData(ApiConstants.checkStatus + '/${id}');
+      var result = jsonDecode(response.body);
+      print(result['status']);
+      apiResponse.responseMessage = result['status'];
+      return apiResponse;
+    } catch (e) {
+      apiResponse.responseMessage = e.toString();
+
+      apiResponse.responseStatus = false;
       return apiResponse;
     }
   }
@@ -78,6 +96,6 @@ class AuthServices {
   logOut(BuildContext context) {
     GetStorage().remove("user");
     GetStorage().remove("auth");
-    Get.to(AppRouting.signIn);
+    Get.toNamed(AppRouting.signIn);
   }
 }

@@ -6,11 +6,15 @@ class User {
   final String? region;
   final String? phoneNumber;
   final String? gender;
+  final String? password;
+  final bool? status;
   String? token;
 
   User({
     this.id,
     this.email,
+    this.status,
+    this.password,
     this.name,
     this.lastName,
     this.region,
@@ -29,6 +33,7 @@ class User {
       phoneNumber: json['phone_number'] as String?,
       gender: json['gender'] as String?,
       token: json['token'] as String?,
+      status: json['status'],
     );
   }
 
@@ -42,6 +47,7 @@ class User {
     data['phone_number'] = phoneNumber;
     data['gender'] = gender;
     data['token'] = token;
+    data['password'] = password;
     return data;
   }
 }

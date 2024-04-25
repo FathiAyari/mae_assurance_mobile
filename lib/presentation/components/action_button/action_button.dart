@@ -20,7 +20,7 @@ class ActionButton extends StatelessWidget {
               backgroundColor: color,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
-            onPressed: () => onPressed,
+            onPressed: () => onPressed(),
             child: Text(
               label,
               style: TextStyle(color: Colors.white, fontFamily: Fonts.RalewayBold),

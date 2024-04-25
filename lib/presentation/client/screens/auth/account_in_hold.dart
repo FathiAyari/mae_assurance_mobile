@@ -3,6 +3,7 @@ import 'package:mae_assurance_mobile/presentation/components/action_button/actio
 import 'package:mae_assurance_mobile/presentation/ressources/colors.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/dimensions/constants.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/fonts.dart';
+import 'package:mae_assurance_mobile/services/auth_services.dart';
 
 class AccountInHoldScreen extends StatefulWidget {
   const AccountInHoldScreen({Key? key}) : super(key: key);
@@ -25,7 +26,9 @@ class _AccountInHoldState extends State<AccountInHoldScreen> {
             ),
             ActionButton(
               color: AppColors.red,
-              onPressed: () {},
+              onPressed: () {
+                AuthServices().logOut(context);
+              },
               label: "Se deconnécter",
             ),
           ],

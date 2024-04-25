@@ -7,6 +7,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/colors.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/routes/router.dart';
+import 'package:mae_assurance_mobile/services/auth_services.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,14 +17,26 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   var seen = GetStorage().read("seen");
+  var auth = GetStorage().read("auth");
   var user = GetStorage().read("user");
   @override
   void initState() {
     super.initState();
-
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () {
       if (seen == 1) {
-        Get.toNamed(AppRouting.signIn);
+        if (auth != null) {
+          AuthServices().checkAccountStatus(id: user['id']).then((value) {
+            if (value.responseMessage == 'active') {
+              Get.toNamed(AppRouting.home);
+            } else if (value.responseMessage == 'inactive') {
+              Get.toNamed(AppRouting.AccountInHold);
+            } else {
+              Get.toNamed(AppRouting.signIn);
+            }
+          });
+        } else {
+          Get.toNamed(AppRouting.signIn);
+        }
       } else {
         Get.toNamed(AppRouting.onboarding);
       }

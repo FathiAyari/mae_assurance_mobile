@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:mae_assurance_mobile/presentation/client/screens/auth/sign_in.dart';
 
 class OnBoardingController extends GetxController {
   RememberClient(Map user) {
@@ -26,10 +27,10 @@ class OnBoardingController extends GetxController {
     storage.write("type_auth", index);
   }
 
-  Logout() async {
+  logout() async {
     var storage = GetStorage();
     storage.write("auth", 0);
     storage.remove("user");
-    // Get.to(SignInScreen());
+    Get.to(SignIn());
   }
 }
