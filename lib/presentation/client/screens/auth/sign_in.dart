@@ -146,7 +146,9 @@ class _SignInState extends State<SignIn> {
                                 overlayColor:
                                     MaterialStateColor.resolveWith((states) => AppColors.primaryGreenLight.withOpacity(0.2)),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed("/reset_password");
+                              },
                               child: Text(
                                 "Mot de passe oublié ?",
                                 style: TextStyle(color: AppColors.primaryGreenLight, fontFamily: Fonts.Raleway),
