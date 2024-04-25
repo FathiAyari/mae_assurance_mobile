@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mae_assurance_mobile/presentation/ressources/colors.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/dimensions/constants.dart';
 import 'package:mae_assurance_mobile/presentation/ressources/fonts.dart';
 
 class ActionButton extends StatelessWidget {
   Function onPressed;
+  Color color;
   String label;
-  ActionButton({Key? key, required this.onPressed, required this.label}) : super(key: key);
+  ActionButton({Key? key, required this.color, required this.onPressed, required this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ActionButton extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryGreen,
+              backgroundColor: color,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
             onPressed: () => onPressed,

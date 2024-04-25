@@ -157,6 +157,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         ActionButton(
+                          color: AppColors.primaryGreen,
                           onPressed: () {},
                           label: "Se Connecter",
                         ),

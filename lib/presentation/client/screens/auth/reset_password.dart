@@ -53,7 +53,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   label: "Email ",
                   textInputType: TextInputType.emailAddress,
                   controller: emailController),
-              ActionButton(onPressed: () {}, label: "Envoyer")
+              ActionButton(color: AppColors.primaryGreen, onPressed: () {}, label: "Envoyer")
             ],
           ),
         ),

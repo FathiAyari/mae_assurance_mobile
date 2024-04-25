@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mae_assurance_mobile/presentation/client/screens/auth/account_in_hold.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/reset_password.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/sign_in.dart';
 import 'package:mae_assurance_mobile/presentation/client/screens/auth/sign_up.dart';
@@ -24,6 +25,8 @@ class AppRouting {
         return MaterialPageRoute(builder: (_) => SignUp());
       case '/reset_password':
         return MaterialPageRoute(builder: (_) => ResetPassword());
+      case '/account_in_hold':
+        return MaterialPageRoute(builder: (_) => AccountInHoldScreen());
 
       default:
         return MaterialPageRoute(

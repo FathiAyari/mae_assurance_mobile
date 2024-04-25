@@ -229,7 +229,7 @@ class _SignUpState extends State<SignUp> {
                   label: "Mot de passe ",
                   textInputType: TextInputType.visiblePassword,
                   controller: nameController),
-              ActionButton(onPressed: () {}, label: "Enregistrer")
+              ActionButton(color: AppColors.primaryGreen, onPressed: () {}, label: "Enregistrer")
             ],
           ),
         ),

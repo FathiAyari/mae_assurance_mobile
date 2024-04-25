@@ -22,14 +22,11 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(Duration(seconds: 3), () {
-      /* if (seen == 1) {
-        if (user != null) {
-
-        } else {}
+      if (seen == 1) {
+        Get.toNamed(AppRouting.signIn);
       } else {
-
-      }*/
-      Get.toNamed(AppRouting.onboarding);
+        Get.toNamed(AppRouting.onboarding);
+      }
     });
   }
 

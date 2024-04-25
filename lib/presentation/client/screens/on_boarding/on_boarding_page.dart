@@ -43,6 +43,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   onPageChanged: (index) {
                     setState(() {
                       currentPage = index;
+                      onBoardingController.check();
                     });
                   },
                   itemCount: contentList.length,
@@ -103,6 +104,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                   onPressed: (currentPage == contentList.length - 1)
                                       ? () {
                                           Get.toNamed(AppRouting.signIn);
+                                          onBoardingController.check();
                                         }
                                       : () {
                                           onBoardingController.check();
