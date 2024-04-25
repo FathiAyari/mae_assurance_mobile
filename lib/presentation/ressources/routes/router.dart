@@ -8,7 +8,7 @@ import 'package:mae_assurance_mobile/presentation/client/screens/splash_screen/s
 class AppRouting {
   static final String splashScreen = "/";
   static final String signIn = "/sign_in";
-  static final String signUp = "/register";
+  static final String signUp = "/sign_up";
   static final String resetPassword = "/reset_password";
   static final String onboarding = "/onboarding";
   static final String AccountInHold = "/account_in_hold";
