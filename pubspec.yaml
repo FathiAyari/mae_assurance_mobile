@@ -47,7 +47,9 @@ dependencies:
   intl: ^0.19.0 # formatage de date et temps en flutter
   fluttertoast: ^8.2.4 # est une package pour afficher des messages toast
   colorful_circular_progress_indicator: ^0.0.2
-
+  firebase_messaging: ^14.6.2
+  flutter_local_notifications: ^14.1.0
+  firebase_analytics: ^10.4.2
 
 dev_dependencies:
   flutter_test:
